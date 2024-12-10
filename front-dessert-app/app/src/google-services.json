@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988883383166",
+    "project_id": "dessert-app-c596e",
+    "storage_bucket": "dessert-app-c596e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988883383166:android:a25db20ffe2ce064ea392f",
+        "android_client_info": {
+          "package_name": "com.project.dessertapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEvlLdsVloCZppd4G7Jr5FiQKuCnJGSUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

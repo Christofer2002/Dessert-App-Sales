@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Dessert Sales App</string>
+    <string name="app_title">MVVM Simple Sample</string>
+    <string name="home">Home</string>
+    <string name="event">Event</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="login">Login</string>
+    <string name="registration">registration</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="admin">Admin</string>
+    <string name="order_list_admin">Order List Admin</string>
+    <string name="order_list_detail_admin">Order List Detail Admin</string>
+    <string name="product">product</string>
+    <string name="dessert_screen">Dessert Screen</string>
+    <string name="more_details_screen">More Details Screen</string>
+    <string name="product_edit">product_edit</string>
+    <string name="product_management">Product Management</string>
+    <string name="recommendations_screen">Recommendation</string>
+</resources>
