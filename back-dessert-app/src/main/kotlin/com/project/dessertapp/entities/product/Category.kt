@@ -1,4 +1,4 @@
-package com.project.dessertapp.entities
+package com.project.dessertapp.entities.product
 
 import jakarta.persistence.*
 import java.util.Objects
@@ -8,13 +8,13 @@ import java.util.Objects
 data class Category(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0,
-
-    @Column(nullable = false, unique = true)
-    var name: String,
+    var id: Long? = null,
 
     @Column(nullable = false)
-    var image: String
+    var name: String? = null,
+
+    @Column(nullable = false)
+    var image: String? = null
 ) {
 
     // Sobrescribir el método equals

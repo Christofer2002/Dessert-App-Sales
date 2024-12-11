@@ -1,14 +1,15 @@
-package com.project.dessertapp.entities
+package com.project.dessertapp.entities.product
 
+import com.project.dessertapp.entities.event.Event
 import jakarta.persistence.*
-import java.util.Objects
+import java.util.*
 
 @Entity
 @Table(name = "products")
 data class Product(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0,
+    var id: Long? = null,
 
     @Column(nullable = false)
     var name: String,
@@ -28,13 +29,15 @@ data class Product(
     @Column(nullable = false)
     var image: String,
 
-    // Relación con la entidad Category (muchos productos a una categoría)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
-    var category: Category
+    @Column(nullable = false)
+    var categoryId: Long?=null,
+
+    // Relation Many-to-Many con Event
+    @ManyToMany(mappedBy = "products", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    //var events: Set<Event>? = HashSet()
+    var events: Set<Event>? = null// Use HashSet to avoid duplicates
 ) {
 
-    // Sobrescribir equals
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || javaClass != other.javaClass) return false
@@ -46,16 +49,14 @@ data class Product(
                 unitPrice == other.unitPrice &&
                 description == other.description &&
                 image == other.image &&
-                category == other.category
+                categoryId == other.categoryId
     }
 
-    // Sobrescribir hashCode
     override fun hashCode(): Int {
-        return Objects.hash(id, name, flavour, durationDays, unitPrice, description, image, category)
+        return Objects.hash(id, name, flavour, durationDays, unitPrice, description, image, categoryId)
     }
 
-    // Sobrescribir toString
     override fun toString(): String {
-        return "Product(id=$id, name='$name', flavour='$flavour', durationDays=$durationDays, unitPrice=$unitPrice, description='$description', image='$image', category=${category.id})"
+        return "Product(id=$id, name='$name', flavour='$flavour', durationDays=$durationDays, unitPrice=$unitPrice, description='$description', image='$image', categoryId=$categoryId)"
     }
 }

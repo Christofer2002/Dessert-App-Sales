@@ -1,4 +1,6 @@
-import com.project.dessertapp.entities.Category
+package com.project.dessertapp.repository.category
+
+import com.project.dessertapp.entities.product.Category
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
