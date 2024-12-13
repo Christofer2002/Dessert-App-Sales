@@ -109,7 +109,7 @@ object NetworkModule {
             //.baseUrl("http://10.0.2.2:8080/v1/")
 
             // For production
-            .baseUrl("https://dessert-app-8a5756c10fa8.herokuapp.com/v1/")
+            .baseUrl("https://devbychris.com/v1/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient)
             .build()
